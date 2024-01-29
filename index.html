@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hockey Express</title> 
+    <!-- ......tailwind and daisyui installation  -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.6.0/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- font awesome -->
+    <script src="https://kit.fontawesome.com/f6589a1185.js" crossorigin="anonymous"></script>
+    <!-- ......font style.... -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- ......tailwind color setup -->
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                clifford: '#da373d',
+                "btn-primary": '#FF4240',
+                "text-prima": '#ffffff99',
+              }
+            }
+          }
+        }
+      </script>
+
+      <!-- ....css style -->
+      <style>
+        .font-manrope{
+            font-family: 'Manrope';
+        }
+        .progress-ring__circle {
+          stroke-dasharray: 400, 400;
+          /* transition: stroke-dashoffset 0.35s; */
+          transform: rotate(90deg);
+          transform-origin: 50% 50%;
+        }
+      </style>
+
+
+</head>
+<body class="font-manrope">
+    <header class="lg:mx-32 mt-15">
+        <nav>
+            <div class="navbar bg-base-100">
+                <div class="navbar-start">
+                  <div class="dropdown">
+                    <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+                    </div>
+                    <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                      <li class="text-[#FF4240]"><a>Home</a></li>
+                      <li>
+                        <a>About</a>
+                      </li>
+                      <li><a>Pages</a></li>
+                      <li><a>Blog</a></li>
+                      <li><a>Contact</a></li>
+                    </ul>
+                  </div>
+                  <a class="btn btn-ghost text-3xl upper-case font-extrabold">Hockey Hero</a>
+                </div>
+                <div class="navbar-center hidden lg:flex">
+                  <ul class="menu menu-horizontal px-1">
+                    <li class="text-[#FF4240]"><a>Home</a></li>
+                    <li><a>About</a></li>
+                    <li><a>Pages</a></li>
+                    <li><a>Blog</a></li>
+                    <li><a>Contact</a></li>
+                  </ul>
+                </div>
+                <div class="navbar-end">
+                    <button class="btn btn-ghost btn-circle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+                    </button>
+                    <a class="btn text-xl font-semibold text-white bg-[#FF4240]">Get Ticket</a>
+                </div>
+              </div>
+        </nav>
+        <!-- ...................banner section....................-->
+        <div class="carousel w-full">
+          <div id="slide1" class="carousel-item relative w-full flex-col justify-center">
+            <div class="relative">
+              <img src="ban1.png" class="w-full" />
+              <div class="absolute flex space-x-3 transform -translate-y-1/2 left-5 right-5 bottom-0">
+              <!-- <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2"> -->
+                <a href="#slide3" class="btn btn-circle bg-black text-white">❮</a> 
+                <a href="#slide2" class="btn btn-circle bg-black text-white">❯</a>
+              </div>
+            </div>
+            <div class="bg-black lg:absolute text-white lg:w-2/4 lg:h-auto rounded-2xl my-4 lg:right-5 lg:bottom-8 ">
+              <h3 class="text-xl font-extrabold p-8 mb-0 pb-0">Meet all the heroes from the field</h3>
+              <p class="font-thin p-8 mt-4 pt-0">There are great players that everyone can fall in love with—Sidney Crosby, Jonathan Toews, Wayne Gretzky, MIke Bossy, etc.</p>
+            </div>
+          </div> 
+          <div id="slide2" class="carousel-item relative w-full flex-col justify-center">
+            <div class="relative">
+              <img src="rsz_ban_2.jpg" class="w-full" />
+              <div class="absolute flex space-x-3 transform -translate-y-1/2 left-5 right-5 bottom-0">
+              <!-- <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2"> -->
+                <a href="#slide1" class="btn btn-circle bg-black text-white">❮</a> 
+                <a href="#slide3" class="btn btn-circle bg-black text-white">❯</a>
+              </div>
+            </div>
+            <div class="bg-black lg:absolute text-white lg:w-2/4 lg:h-auto rounded-2xl my-4 lg:right-5 lg:bottom-8 ">
+              <h3 class="text-xl font-extrabold p-8 mb-0 pb-0">Meet all the heroes from the field</h3>
+              <p class="font-thin p-8 mt-4 pt-0">There are great players that everyone can fall in love with—Sidney Crosby, Jonathan Toews, Wayne Gretzky, MIke Bossy, etc.</p>
+            </div>
+          </div> 
+          <div id="slide3" class="carousel-item relative w-full flex-col justify-center">
+            <div class="relative">
+              <img src="rsz_ban3.jpg" class="w-full" />
+              <div class="absolute flex space-x-3 transform -translate-y-1/2 left-5 right-5 bottom-0">
+              <!-- <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2"> -->
+                <a href="#slide2" class="btn btn-circle bg-black text-white">❮</a> 
+                <a href="#slide1" class="btn btn-circle bg-black text-white">❯</a>
+              </div>
+            </div>
+            <div class="bg-black lg:absolute text-white lg:w-2/4 lg:h-auto rounded-2xl my-4 lg:right-5 lg:bottom-8 ">
+              <h3 class="text-xl font-extrabold p-8 mb-0 pb-0">Meet all the heroes from the field</h3>
+              <p class="font-thin p-8 mt-4 pt-0">There are great players that everyone can fall in love with—Sidney Crosby, Jonathan Toews, Wayne Gretzky, MIke Bossy, etc.</p>
+            </div>
+          </div>           
+        </div>
+    </header>
+    <!-- .....................main section development,,,,,,,,,,,,,,, -->
+    <main class="lg:mx-32">
+      <!-- ......................professional hockeys club,,, -->
+      <section class="mt-10">
+        <div class="lg:text-center sm:px-4">
+          <h3 class="text-3xl font-extrabold">Professional Hockeys Club</h3>
+          <p class="font-medium lg:px-70">The Toronto Professional Hockey Club was a professional ice hockey team in Toronto, Ontario, Canada. It was Toronto's first professional ice hockey team, founded in 1906.</p>
+        </div>
+        <!-- ..............progress......... -->
+        <div class="flex flex-col lg:flex-row justify-center items-center space-x-3 mt-16">
+          <div class="mb-5 p-10">
+            <div class="relative h-20 w-40">
+              <svg class="h-full w-full" viewBox="0 0 100 100">
+                <!-- Background circle -->
+                <circle class="stroke-current text-gray-200" stroke-width="10" cx="50" cy="50" r="40" fill="transparent"></circle>
+                <!-- Progress circle -->
+                <circle class="progress-ring__circle stroke-current text-[#FF4240]" stroke-width="10" stroke-linecap="round" cx="50" cy="50" r="40" fill="transparent" stroke-dashoffset="calc(400 - (400 * 50) / 100)"></circle>
+                <!-- Center text -->
+                <text x="50" y="50" text-anchor="middle" alignment-baseline="middle">87%</text>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold">Prayer Facility</h3>
+            <p>we are try to provide this Facility,its great</p>
+            
+            
+          </div>
+
+          <div class="mb-5 p-10">
+            <div class="relative h-20 w-40">
+              <svg class="h-full w-full" viewBox="0 0 100 100">
+                <!-- Background circle -->
+                <circle class="stroke-current text-gray-200" stroke-width="10" cx="50" cy="50" r="40" fill="transparent"></circle>
+                <!-- Progress circle -->
+                <circle class="progress-ring__circle stroke-current text-[#49D293]" stroke-width="10" stroke-linecap="round" cx="50" cy="50" r="40" fill="transparent" stroke-dashoffset="calc(400 - (400 * 58) / 100)"></circle>
+                <!-- Center text -->
+                <text x="50" y="50" text-anchor="middle" alignment-baseline="middle">95%</text>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold">Experienced Coach</h3>
+            <p>we have high Experienced trainer Coach,its great opportunities</p>
+          </div>
+
+          <div class="mb-5">
+            <div class="relative h-20 w-40">
+              <svg class="h-full w-full" viewBox="0 0 100 100">
+                <!-- Background circle -->
+                <circle class="stroke-current text-gray-200" stroke-width="10" cx="50" cy="50" r="40" fill="transparent"></circle>
+                <!-- Progress circle -->
+                <circle class="progress-ring__circle stroke-current text-[#FFB546]" stroke-width="10" stroke-linecap="round" cx="50" cy="50" r="40" fill="transparent" stroke-dashoffset="calc(400 - (400 * 55) / 100)"></circle>
+                <!-- Center text -->
+                <text x="50" y="50" text-anchor="middle" alignment-baseline="middle">90%</text>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold">Senior Player</h3>
+            <p>Its old club thats why we have a lot of senior player.</p>
+          </div>
+
+          <div class="mb-5">
+            <div class="relative h-20 w-40">
+              <svg class="h-full w-full" viewBox="0 0 100 100">
+                <!-- Background circle -->
+                <circle class="stroke-current text-gray-200" stroke-width="10" cx="50" cy="50" r="40" fill="transparent"></circle>
+                <!-- Progress circle -->
+                <circle class="progress-ring__circle stroke-current text-[#4C8DF1]" stroke-width="10" stroke-linecap="round" cx="50" cy="50" r="40" fill="transparent" stroke-dashoffset="calc(400 - (400 * 48) / 100)"></circle>
+                <!-- Center text -->
+                <text x="50" y="50" text-anchor="middle" alignment-baseline="middle">80%</text>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold">Training Ground</h3>
+            <p>Its a great advantages that we have large playground </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ............................program section................... -->
+      <section class="mt-15">
+        <div>
+          <h3 class="text-3xl font-extrabold text-center mt-20">Program Sections</h3>
+          <p class="font-medium text-center pt-6 lg:px-60">There are lot of program in our hockey club, this is the main part and enormous opportunities available the hockey Hero </p>         
+        </div>
+        <div class="grid gap-8 grid-cols-1  mt-14 ">
+          <div class="lg:col-span-3 flex-1 bg-[#13131880] shadow-lg shadow-[#13131880] relative rounded-2xl">
+            <img class="lg:h-[330px] lg:w-[570px]" src="Images/2.png" alt="">
+            <div class="absolute top-10 pt-20 pl-10  text-white">
+              <h3 class="text-xl font-extrabold">Junior Program</h3>
+              <p class="mb-7 lg:w-96">This program is the introduction of stickhandling, passing & shooting development, along with the continuing reinforcement of skating development.</p>
+              <button class="bg-btn-primary py-3 px-6 rounded-xl">Register Now!</button>
+            </div>
+          </div>
+          <div class="lg:col-span-3 flex-1 bg-[#131318cc] shadow-lg shadow-[#131318cc] relative rounded-2xl">
+            <img class="lg:h-[330px] lg:w-[570px]" src="Images/3.png" alt="">
+            <div class="absolute top-8 pt-20 pl-10  text-white">
+              <h3 class="text-xl font-extrabold">Teenager Program</h3>
+              <p class="mb-7 lg:w-96">This program is the introduction of stickhandling, passing & shooting development, along with the continuing reinforcement of skating development.</p>
+              <button class="bg-btn-primary py-3 px-6 rounded-xl">Register Now!</button>
+            </div>
+          </div>
+          <div class="lg:col-span-6 flex-1 bg-[#131318cc] shadow-lg shadow-[#131318cc] relative rounded-2xl">
+            <img src="Images/4.png" alt="">
+              <div class="absolute bottom-5 lg:pt-20 pl-10  text-white">
+                <h3 class="text-xl font-extrabold">Professional Program</h3>
+                <p class="mb-7 lg:w-96">This program is the introduction of stickhandling, passing & shooting development, along with the continuing reinforcement of skating development.</p>
+                <button class="bg-btn-primary py-3 px-6 rounded-xl">Register Now!</button>
+              </div>
+          </div>
+        </div>
+      </section>
+      <!-- ........................new products section................ -->
+      <section class="mt-24">
+        <div>
+          <h3 class="text-3xl font-extrabold text-center">Our New Products</h3>
+          <p class="font-medium text-center pt-6 lg:px-60">Its a new arrival new goal and new expectation also get the new Experienced you get the new products dam sure you can find it.</p>
+        </div>
+
+        <!-- ...........................card section.. ....-->
+
+        <div class="mt-10 grid gap-4 grid-cols-1 lg:grid-cols-2 items-center lg:mb-20">
+          <!-- ..............1st card -->
+          <div class="card card-side bg-base-100 shadow-xl">
+            <figure><img src="card5.png" alt="Movie"/></figure>
+            <div class="card-body">
+              <div class="flex gap-2 items-center">
+                <div class="flex items-center">
+                  <img src="Images/Fra1.png" alt=""><div>5.0</div>
+                </div>
+                <div class="flex items-center">
+                  <img src="Images/eye2.png" alt=""><div>20</div>
+                </div>
+                <div class="flex items-center">
+                  <img src="Images/hard1.png" alt=""><div>200</div>
+                </div>
+              </div>
+              <h2 class="card-title font-extrabold">Teams Jacket</h2>
+              <p>This is aesthetic collection,so don't late at all</p>
+              <div class="flex items-center">
+                <div class="text-[#FF4240] font-extrabold">Price - $22.00</div>
+                <div class="flex items-center">
+                  <img src="Images/deli2.svg" alt="">
+                  <div>Delivery Fee : Free</div>
+                </div>
+              </div>
+
+              
+            </div>
+          </div>
+          <!-- ..............2nd card -->
+          <div class="card card-side bg-base-100 shadow-xl">
+            <figure><img src="card6.png" alt="Movie"/></figure>
+            <div class="card-body">
+              <div class="flex gap-2 items-center">
+                <div class="flex items-center">
+                  <img src="Images/Fra1.png" alt=""><div>5.0</div>
+                </div>
+                <div class="flex items-center">
+                  <img src="Images/eye2.png" alt=""><div>20</div>
+                </div>
+                <div class="flex items-center">
+                  <img src="Images/hard1.png" alt=""><div>200</div>
+                </div>
+              </div>
+              <h2 class="card-title font-extrabold">Hockeys Logo Design</h2>
+              <p>This is aesthetic collection,so don't late at all</p>
+              <div class="flex items-center">
+                <div class="text-[#FF4240] font-extrabold">Price - $22.00</div>
+                <div class="flex items-center">
+                  <img src="Images/deli2.svg" alt="">
+                  <div>Delivery Fee : Free</div>
+                </div>
+              </div>
+
+              
+            </div>
+          </div>
+          <!-- ..............3rd card -->
+          <div class="card card-side bg-base-100 shadow-xl">
+            <figure><img src="card7.png" alt="Movie"/></figure>
+            <div class="card-body">
+              <div class="flex gap-2 items-center">
+                <div class="flex items-center">
+                  <img src="Images/Fra1.png" alt=""><div>5.0</div>
+                </div>
+                <div class="flex items-center">
+                  <img src="Images/eye2.png" alt=""><div>20</div>
+                </div>
+                <div class="flex items-center">
+                  <img src="Images/hard1.png" alt=""><div>200</div>
+                </div>
+              </div>
+              <h2 class="card-title font-extrabold">Cap for Hockeys Team</h2>
+              <p>This is aesthetic collection,so don't late at all</p>
+              <div class="flex items-center">
+                <div class="text-[#FF4240] font-extrabold">Price - $22.00</div>
+                <div class="flex items-center">
+                  <img src="Images/deli2.svg" alt="">
+                  <div>Delivery Fee : Free</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- ..............4th card -->
+          <div class="card card-side bg-base-100 shadow-xl">
+            <figure><img src="card8.png" alt="Movie"/></figure>
+            <div class="card-body">
+              <div class="flex gap-2 items-center">
+                <div class="flex items-center">
+                  <img src="Images/Fra1.png" alt=""><div>5.0</div>
+                </div>
+                <div class="flex items-center">
+                  <img src="Images/eye2.png" alt=""><div>20</div>
+                </div>
+                <div class="flex items-center">
+                  <img src="Images/hard1.png" alt=""><div>200</div>
+                </div>
+              </div>
+              <h2 class="card-title font-extrabold">Hockey Team's Jersey</h2>
+              <p>This is aesthetic collection,so don't late at all</p>
+              <div class="flex items-center">
+                <div class="text-[#FF4240] font-extrabold">Price - $22.00</div>
+                <div class="flex items-center">
+                  <img src="Images/deli2.svg" alt="">
+                  <div>Delivery Fee : Free</div>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+          <!-- ..............5th card -->
+          <div class="card card-side bg-base-100 shadow-xl">
+            <figure><img src="card9.png" alt="Movie"/></figure>
+            <div class="card-body">
+              <div class="flex gap-2 items-center">
+                <div class="flex items-center">
+                  <img src="Images/Fra1.png" alt=""><div>5.0</div>
+                </div>
+                <div class="flex items-center">
+                  <img src="Images/eye2.png" alt=""><div>20</div>
+                </div>
+                <div class="flex items-center">
+                  <img src="Images/hard1.png" alt=""><div>200</div>
+                </div>
+              </div>
+              <h2 class="card-title font-extrabold">Hockeys Hero Helmet</h2>
+              <p>This is aesthetic collection,so don't late at all</p>
+              <div class="flex items-center">
+                <div class="text-[#FF4240] font-extrabold">Price - $22.00</div>
+                <div class="flex items-center">
+                  <img src="Images/deli2.svg" alt="">
+                  <div>Delivery Fee : Free</div>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+          <!-- ..............6th card -->
+          <div class="card card-side bg-base-100 shadow-xl">
+            <figure><img src="card10.png" alt="Movie"/></figure>
+            <div class="card-body">
+              <div class="flex gap-2 items-center">
+                <div class="flex items-center">
+                  <img src="Images/Fra1.png" alt=""><div>5.0</div>
+                </div>
+                <div class="flex items-center">
+                  <img src="Images/eye2.png" alt=""><div>20</div>
+                </div>
+                <div class="flex items-center">
+                  <img src="Images/hard1.png" alt=""><div>200</div>
+                </div>
+              </div>
+              <h2 class="card-title font-extrabold">World Cup Football</h2>
+              <p>This is aesthetic collection,so don't late at all</p>
+              <div class="flex items-center">
+                <div class="text-[#FF4240] font-extrabold">Price - $22.00</div>
+                <div class="flex items-center">
+                  <img src="Images/deli2.svg" alt="">
+                  <div>Delivery Fee : Free</div>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+        <hr class="lg:border-dotted">
+      </section>
+
+      <!-- ................Client question section........... -->
+      <section class="mt-24">
+        <div class=" mb-8">
+          <h3 class="text-3xl font-extrabold text-center">Clients Question</h3>
+          <p class="font-medium text-center pt-6 lg:px-60">Happy Clients, Hope you all good, you have any question or advised please just click on the below,we are waiting for your feedback.</p>
+        </div>
+        <div class="lg:flex space-x-10 lg:p-8 sm:space-y-4">
+          <div class="">
+            <img class="lg:h-[470px]" src="Images/11.png" alt="">
+          </div>
+          <div class="lg:w-full lg:h-[470px] ml-0">
+            <!-- ........1st part -->
+            <div class="collapse collapse-plus mb-4 border">
+              <input type="radio" name="my-accordion-3" checked="checked" /> 
+              <div class="collapse-title text-xl font-bold">
+                Our Equipment
+              </div>
+              <div class="collapse-content text-[#13131899]"> 
+                <p>just click which Equipment did not satisfy you</p>
+              </div>
+            </div>
+            <!-- ........2 part -->
+            <div class="collapse collapse-plus pb-4 w-full border">
+              <input type="radio" name="my-accordion-3" checked="checked" /> 
+              <div class="collapse-title text-xl font-bold">
+                Hockey Training
+              </div>
+              <div class="collapse-content text-[#13131899]"> 
+                <p>click on if you don't satisfy</p>
+              </div>
+            </div>
+            <!-- ........3 part -->
+            <div class="collapse collapse-plus pb-4 w-full border">
+              <input type="radio" name="my-accordion-3" checked="checked" /> 
+              <div class="collapse-title text-xl font-bold">
+                Private Lessons
+              </div>
+              <div class="collapse-content text-[#13131899]"> 
+                <p>just click which Equipment did not satisfy you</p>
+              </div>
+            </div>
+            <!-- ........4 part -->
+            <div class="collapse collapse-plus pb-4 w-full border">
+              <input type="radio" name="my-accordion-3" checked="checked" /> 
+              <div class="collapse-title text-xl font-bold">
+                Ski Touring
+              </div>
+              <div class="collapse-content text-[#13131899]"> 
+                <p>just click which Equipment did not satisfy you</p>
+              </div>
+            </div>
+            <!-- ........5 part -->
+            <div class="collapse collapse-plus pb-4 w-full border">
+              <input type="radio" name="my-accordion-3" checked="checked" /> 
+              <div class="collapse-title text-xl font-bold">
+                Booking
+              </div>
+              <div class="collapse-content text-[#13131899]"> 
+                <p>just click which Equipment did not satisfy you</p>
+              </div>
+            </div>
+            <!-- ........6 part -->
+            <div class="collapse collapse-plus pb-4 w-full border">
+              <input type="radio" name="my-accordion-3" checked="checked" /> 
+              <div class="collapse-title text-xl font-bold">
+                Pricings
+              </div>
+              <div class="collapse-content text-[#13131899]"> 
+                <p>just click which Equipment did not satisfy you</p>
+              </div>
+            </div>
+              
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- ......................Get in Touch .......................-->
+      <section class="mt-24">
+        <div class="border mb-8">
+          <h3 class="text-3xl font-extrabold text-center">Get In Touch</h3>
+          <p class="font-medium text-center pt-6 lg:px-60">WOW, its great that you can connect with us in below, so don't be late shake a leg to connect with us.</p>
+        </div>
+        <!-- .................contract form........................ -->
+        <div class="lg:flex justify-center space-x-6">
+          <div class="">
+            <div class=" lg:px-10  pt-4 sm:mb-4 space-y-6 h-[500px]">
+              <!-- call -->
+              <div class="w-[350px]  px-12 pt-12 rounded-2xl bg-[#bced6d1a]">
+                <img src="Images/Group 1.png" alt=""><br>
+                phone number:
+                <div class="font-medium text-xl">+8801314883099</div>
+              </div>
+              <!-- mail -->
+              <div class="w-[350px] px-12 rounded-2xl bg-[#fddd5f1a]">
+                <img src="Images/Group 2.png" alt=""><br>
+                Email:
+                <div class="font-medium text-xl">ahsanreaz120363@gmail.com</div>
+              </div>
+              <!-- location -->
+              <div class="w-[350px]  px-12 rounded-2xl bg-[#62fff31a]">
+                <img src="Images/Group 3.png" alt=""><br>
+                Location :
+                <div class="font-medium text-xl">Location : 
+                  152/1 Mohakhali Wireless Gate</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="space-y-6">
+            <div class="lg:flex gap-2">
+              <label class="form-control w-full max-w-xs">
+                <div class="label text-xl font-semibold">Your Name
+                </div>
+                <input type="text" placeholder="Enter your full name" class="input input-bordered w-full max-w-xs border-none bg-white shadow-md" />
+              </label>
+              <label class="form-control w-full max-w-xs">
+                <div class="label text-xl font-semibold">Your Email
+                </div>
+                <input type="email" placeholder="Enter your email" class="input input-bordered w-full max-w-xs border-none bg-white shadow-md" />
+              </label>
+            </div>
+            <div class="lg:flex gap-2 ">
+              <label class="form-control w-full max-w-xs">
+                <div class="label text-xl font-semibold">Subject
+                </div>
+                <input type="text" placeholder="Enter your subject" class="input input-bordered w-full max-w-xs border-none bg-white shadow-md"/>
+              </label>
+              <label class="form-control w-full max-w-xs">
+                <div class="label text-xl font-semibold">Phone Number
+                </div>
+                <input type="number" placeholder="Enter your phone number" class="input input-bordered w-full max-w-xs border-none bg-white shadow-md" />
+              </label>
+            </div>
+            <label class="form-control">
+              <div class="label">
+                <span class="label-text text-xl font-semibold">Message</span>
+              </div>
+              <textarea class="textarea textarea-bordered h-64 border-none bg-white shadow-md" placeholder="Write your message"></textarea>
+            </label>
+            <button class="btn bg-btn-primary text-white w-full">Send Message</button>
+          </div>
+        </div>
+        <hr>
+      </section>
+
+      <!-- ...........social link section.......... -->
+
+      <section class="mt-24">
+        <nav class="rounded-lg h-40 bg-[#13131808] pt-16 ">
+          <header class="font-extrabold text-2xl text-center">Social Media</header> 
+          <div class="flex gap-2 justify-center items-center">
+            <a><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fill-current"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path></svg></a>
+            <a><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fill-current"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"></path></svg></a>
+            <a><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fill-current"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"></path></svg></a>
+          </div>
+        </nav>
+
+      </section>
+    </main>
+    <!-- ...............footer section............. -->
+    <footer class="footer p-10 text-base-content mt-24 pt-24 bg-[#131318]">
+      <div class="pl-30">
+        <h2 class="font-extrabold text-2xl text-white">Get In Touch</h2>
+        <p class="text-[#ffffff99]">Connection and communication is interrelated with each other <br> so you can connect the most welcome in anytime. </p>
+        <div class="space-x-2 text-[#ffffff99]"><i class="fa-regular fa-envelope"></i><span>ahsanreaz120363@gamil.com</span>  </div>
+        <div class="space-x-2 text-[#ffffff99]"><i class="fa-solid fa-phone"></i> <span>+8801314883093</span> </div>
+      </div> 
+      <nav class="grid lg:grid-flow-col grid-cols-2 space-x-10">
+        <nav class="grid grid-flow-row  space-y-3">
+          <!-- 1st part -->
+          <header class=" text-white font-semibold">COMPANY</header> 
+          <a class="link link-hover text-[#ffffff99]">About us</a>
+          <a class="link link-hover text-[#ffffff99]">Leadership</a>
+          <a class="link link-hover text-[#ffffff99]">Careers</a>
+          <a class="link link-hover text-[#ffffff99]">News & Article</a>
+          <a class="link link-hover text-[#ffffff99]">Legal Notice</a>
+        </nav> 
+        <nav class="grid grid-flow-row  space-y-3">
+          <!-- 2nd part -->
+          <header class=" text-white font-semibold">SUPPORT</header> 
+          <a class="link link-hover text-[#ffffff99]">Help Center</a>
+          <a class="link link-hover text-[#ffffff99]">Contact</a>
+          <a class="link link-hover text-[#ffffff99]">FAQ</a>
+          <a class="link link-hover text-[#ffffff99]">Ticket Support</a>
+          <a class="link link-hover text-[#ffffff99]">Contact Us</a>
+        </nav> 
+        <nav class="grid grid-flow-row space-y-3 justify-center items-center">
+          <!-- 3rd part -->
+          <header class=" text-white font-semibold">SERVICES</header> 
+          <a class="link link-hover text-[#ffffff99]">Academy</a>
+          <a class="link link-hover text-[#ffffff99]">Group Lesson</a>
+          <a class="link link-hover text-[#ffffff99]">Private Lesson</a>
+          <a class="link link-hover text-[#ffffff99]">Hockeys for kids</a>
+          <a class="link link-hover text-[#ffffff99]">Hockeys for Adult</a>
+        </nav>
+      </nav>  
+      
+    </footer>
+    
+</body>
+</html>
